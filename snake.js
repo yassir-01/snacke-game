@@ -14,12 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
 // Adapter le canvas à l’écran
 function resizeCanvas() {
     canvas.width = Math.floor(window.innerWidth / size) * size;
-    canvas.height = Math.floor((window.innerHeight - 200) / size) * size;
+    canvas.height = Math.floor((window.innerHeight - 0) / size) * size; // plein écran
 }
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 
-// Boutons tactiles
+// Fonction plein écran (emulateur / mobile)
+function goFullScreen() {
+    if (canvas.requestFullscreen) canvas.requestFullscreen().catch(()=>{});
+    else if (canvas.webkitRequestFullscreen) canvas.webkitRequestFullscreen();
+    else if (canvas.msRequestFullscreen) canvas.msRequestFullscreen();
+}
+
+// Boutons tactiles (croix)
 function setDirection(dir) {
     if (dir == "up" && dy == 0) { dx = 0; dy = -size; }
     if (dir == "down" && dy == 0) { dx = 0; dy = size; }
@@ -38,10 +45,8 @@ document.addEventListener("keydown", e => {
 function startGame() {
     if (running) return;
 
-    // Plein écran automatique (mobile / navigateur)
-    if (canvas.requestFullscreen) canvas.requestFullscreen().catch(() => {});
-    else if (canvas.webkitRequestFullscreen) canvas.webkitRequestFullscreen();
-    else if (canvas.msRequestFullscreen) canvas.msRequestFullscreen();
+    // Plein écran automatique
+    goFullScreen();
 
     snake = [
         { x: Math.floor(canvas.width / 2), y: Math.floor(canvas.height / 2) },
@@ -111,7 +116,7 @@ function moveSnake() {
 
     snake.unshift(head);
 
-    // Détection collision avec la nourriture
+    // Collision avec nourriture
     if (Math.abs(head.x - food.x) < size && Math.abs(head.y - food.y) < size) {
         score++;
         document.getElementById("score").innerText = score;

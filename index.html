@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Yassir Snake Game</title>
-<link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -20,7 +23,10 @@
   <button onclick="restartGame()">Restart</button>
 </div>
 
-
+<div class="score">
+  Score: <span id="score">0</span>
+  <span id="highscore">Highscore: 0</span>
+</div>
 
 <canvas id="game"></canvas>
 
@@ -32,10 +38,7 @@
     <button class="right" onclick="setDirection('right')">➡️</button>
   </div>
 </div>
-<div class="score">
-  Score: <span id="score">0</span>
-  <span id="highscore">Highscore: 0</span>
-</div>
+
 <script src="snake.js"></script>
 </body>
 </html>
