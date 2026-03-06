@@ -57,3 +57,10 @@ button:hover{
   font-size:16px;
   margin-right:10px;
 }
+#highscore{
+  display:block;
+  margin-top:5px;
+  font-size:18px;
+  color:#ffcc00;
+  text-shadow:0 0 5px #ffcc00;
+}

@@ -30,6 +30,15 @@ document.addEventListener("keydown", e => {
 });
 
 function startGame() {
+
+  // Mettre le canvas en plein écran automatiquement
+if (canvas.requestFullscreen) {
+  canvas.requestFullscreen().catch(()=>{});
+} else if (canvas.webkitRequestFullscreen) { 
+  canvas.webkitRequestFullscreen();
+} else if (canvas.msRequestFullscreen) {
+  canvas.msRequestFullscreen();
+}
     if (running) return;
 
     snake = [
