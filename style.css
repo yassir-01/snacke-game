@@ -1,57 +1,38 @@
 body{
-
-text-align:center;
-background:#000;
-color:white;
-font-family:Arial;
-
+  margin:0;
+  padding:0;
+  text-align:center;
+  background:#000;
+  color:white;
+  font-family:Arial;
 }
 
 h1{
-
-color:#00ff99;
-text-shadow:0 0 20px #00ff99;
-
+  color:#00ff99;
+  text-shadow:0 0 20px #00ff99;
 }
 
 canvas{
-
-background:#111;
-border:4px solid #00ff99;
-box-shadow:0 0 30px #00ff99;
-margin-top:20px;
-
+  display:block;
+  margin:0 auto;
+  background:#111;
+  border:4px solid #00ff99;
+  box-shadow:0 0 30px #00ff99;
 }
 
 button{
-
-padding:10px 20px;
-margin:10px;
-font-size:16px;
-background:#00ff99;
-border:none;
-cursor:pointer;
-border-radius:6px;
-
+  padding:10px 20px;
+  margin:5px;
+  font-size:18px;
+  border-radius:8px;
+  background:#00ff99;
+  border:none;
+  cursor:pointer;
 }
 
 button:hover{
-
-background:#00cc77;
-
+  background:#00cc77;
 }
-
-select{
-
-padding:6px;
-font-size:16px;
-
-}
-
-.score{
-
-font-size:22px;
-margin-top:10px;
 
 .mobile-controls{
   display:flex;
@@ -61,10 +42,18 @@ margin-top:10px;
 }
 
 .mobile-controls button{
-  padding:10px;
+  padding:15px;
   margin:5px;
   font-size:20px;
-  border-radius:8px;
 }
 
+.score{
+  font-size:22px;
+  margin-top:10px;
+}
+
+.menu select{
+  padding:6px;
+  font-size:16px;
+  margin-right:10px;
 }

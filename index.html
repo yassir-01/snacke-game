@@ -3,6 +3,7 @@
 <head>
 <title>Yassir Snake Game</title>
 <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 
 <body>
@@ -10,28 +11,28 @@
 <h1>🐍 Yassir Snake Game</h1>
 
 <div class="menu">
-
-<label>Choose Level:</label>
-
-<select id="level">
-<option value="200">Easy</option>
-<option value="120">Medium</option>
-<option value="70">Hard</option>
-</select>
-
-<button onclick="startGame()">Start Game</button>
-
+  <select id="level">
+    <option value="150">Easy</option>
+    <option value="100">Medium</option>
+    <option value="60">Hard</option>
+  </select>
+  <button onclick="startGame()">Start Game</button>
+  <button onclick="restartGame()">Restart</button>
 </div>
 
 <div class="score">
 Score: <span id="score">0</span>
 </div>
 
-<canvas id="game" width="400" height="400"></canvas>
+<canvas id="game"></canvas>
 
-<button onclick="restartGame()">Restart</button>
+<div class="mobile-controls">
+  <button onclick="setDirection('up')">⬆️</button><br>
+  <button onclick="setDirection('left')">⬅️</button>
+  <button onclick="setDirection('down')">⬇️</button>
+  <button onclick="setDirection('right')">➡️</button>
+</div>
 
 <script src="snake.js"></script>
-
 </body>
 </html>
