@@ -14,19 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
 // Adapter le canvas à l’écran
 function resizeCanvas() {
     canvas.width = Math.floor(window.innerWidth / size) * size;
-    canvas.height = Math.floor((window.innerHeight - 0) / size) * size; // plein écran
+    canvas.height = Math.floor((window.innerHeight - 150) / size) * size; // laisser espace pour menu et boutons
 }
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 
-// Fonction plein écran (emulateur / mobile)
+// Fonction plein écran (mobile/emulateur)
 function goFullScreen() {
     if (canvas.requestFullscreen) canvas.requestFullscreen().catch(()=>{});
     else if (canvas.webkitRequestFullscreen) canvas.webkitRequestFullscreen();
     else if (canvas.msRequestFullscreen) canvas.msRequestFullscreen();
 }
 
-// Boutons tactiles (croix)
+// Boutons tactiles
 function setDirection(dir) {
     if (dir == "up" && dy == 0) { dx = 0; dy = -size; }
     if (dir == "down" && dy == 0) { dx = 0; dy = size; }
@@ -45,7 +45,6 @@ document.addEventListener("keydown", e => {
 function startGame() {
     if (running) return;
 
-    // Plein écran automatique
     goFullScreen();
 
     snake = [
@@ -122,8 +121,7 @@ function moveSnake() {
         document.getElementById("score").innerText = score;
         food = randomFood();
 
-        // Mettre à jour highscore
-        if (score > highscore) {
+        if(score > highscore){
             highscore = score;
             document.getElementById("highscore").innerText = "Highscore: " + highscore;
             localStorage.setItem("snakeHighscore", highscore);

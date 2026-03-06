@@ -13,6 +13,7 @@
 
 <h1>🐍 Yassir Snake Game</h1>
 
+<!-- Menu en dehors du canvas -->
 <div class="menu">
   <select id="level">
     <option value="150">Easy</option>
@@ -23,13 +24,16 @@
   <button onclick="restartGame()">Restart</button>
 </div>
 
+<!-- Score et highscore -->
 <div class="score">
   Score: <span id="score">0</span>
   <span id="highscore">Highscore: 0</span>
 </div>
 
+<!-- Canvas -->
 <canvas id="game"></canvas>
 
+<!-- Contrôles tactiles en croix en dehors du canvas -->
 <div class="mobile-controls">
   <button class="up" onclick="setDirection('up')">⬆️</button>
   <div class="middle-row">
