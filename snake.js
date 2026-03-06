@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Adapter le canvas à l’écran
 function resizeCanvas() {
-    canvas.width = Math.floor(window.innerWidth / size) * size;
-    canvas.height = Math.floor((window.innerHeight - 150) / size) * size; // laisser espace pour menu et boutons
+    canvas.width = Math.floor(window.innerWidth * 0.9 / size) * size; // 90% largeur
+    canvas.height = Math.floor(window.innerHeight * 0.6 / size) * size; // 60% hauteur
 }
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
