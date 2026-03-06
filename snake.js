@@ -62,6 +62,10 @@ function startGame() {
     game = setInterval(drawGame, speed);
     running = true;
 }
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js")
+  .then(() => console.log("Service Worker Registered"));
+}
 
 function restartGame() {
     clearInterval(game);
