@@ -5,6 +5,12 @@ const size = 20;
 let snake, dx, dy, food, score;
 let game, running = false;
 
+// Récupérer le highscore depuis le navigateur
+let highscore = localStorage.getItem("snakeHighscore") || 0;
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("highscore").innerText = "Highscore: " + highscore;
+});
+
 // Adapter le canvas à l’écran
 function resizeCanvas() {
     canvas.width = Math.floor(window.innerWidth / size) * size;
@@ -30,16 +36,12 @@ document.addEventListener("keydown", e => {
 });
 
 function startGame() {
-
-  // Mettre le canvas en plein écran automatiquement
-if (canvas.requestFullscreen) {
-  canvas.requestFullscreen().catch(()=>{});
-} else if (canvas.webkitRequestFullscreen) { 
-  canvas.webkitRequestFullscreen();
-} else if (canvas.msRequestFullscreen) {
-  canvas.msRequestFullscreen();
-}
     if (running) return;
+
+    // Plein écran automatique (mobile / navigateur)
+    if (canvas.requestFullscreen) canvas.requestFullscreen().catch(() => {});
+    else if (canvas.webkitRequestFullscreen) canvas.webkitRequestFullscreen();
+    else if (canvas.msRequestFullscreen) canvas.msRequestFullscreen();
 
     snake = [
         { x: Math.floor(canvas.width / 2), y: Math.floor(canvas.height / 2) },
@@ -100,7 +102,7 @@ function drawFood() {
 function moveSnake() {
     let head = { x: snake[0].x + dx, y: snake[0].y + dy };
 
-    // Collision avec les murs ou soi-même
+    // Collision avec murs ou soi-même
     if (head.x < 0 || head.y < 0 || head.x >= canvas.width || head.y >= canvas.height ||
         snake.some(p => p.x === head.x && p.y === head.y)) {
         gameOver();
@@ -114,6 +116,13 @@ function moveSnake() {
         score++;
         document.getElementById("score").innerText = score;
         food = randomFood();
+
+        // Mettre à jour highscore
+        if (score > highscore) {
+            highscore = score;
+            document.getElementById("highscore").innerText = "Highscore: " + highscore;
+            localStorage.setItem("snakeHighscore", highscore);
+        }
     } else {
         snake.pop();
     }
