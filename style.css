@@ -1,98 +1,107 @@
-/* Body et plein écran */
-html, body {
-  margin:0;
-  padding:0;
-  height:100%;
-  width:100%;
-  overflow:hidden;
-  background:#000;
-  text-align:center;
-  font-family: Arial, sans-serif;
-  color:white;
+body{
+
+margin:0;
+background:black;
+color:#00ff99;
+text-align:center;
+font-family:Arial;
+
 }
 
-h1 {
-  color:#00ff99;
-  text-shadow:0 0 20px #00ff99;
-  margin-top:10px;
+h1{
+
+text-shadow:0 0 20px #00ff99;
+
 }
 
-/* Menu au-dessus du canvas */
-.menu {
-  position: relative;
-  margin-top:10px;
-  z-index: 10;
+.menu{
+
+margin-bottom:10px;
+
 }
 
-button {
-  padding:10px 20px;
-  margin:5px;
-  font-size:18px;
-  border-radius:8px;
-  background:#00ff99;
-  border:none;
-  cursor:pointer;
+canvas{
+
+background:black;
+
+border:6px solid #00ff99;
+
+box-shadow:0 0 30px #00ff99;
+
+display:block;
+
+margin:auto;
+
+width:90vw;
+
+height:55vh;
+
 }
 
-button:hover {
-  background:#00cc77;
+button{
+
+background:#00ff99;
+
+border:none;
+
+padding:12px 20px;
+
+margin:5px;
+
+font-size:18px;
+
+border-radius:10px;
+
 }
 
-/* Score et highscore en haut à droite */
-.score {
-  position: absolute;
-  top:10px;
-  right:10px;
-  font-size:22px;
-  text-align:right;
-  z-index: 10;
+select{
+
+padding:10px;
+
+font-size:18px;
+
+border-radius:10px;
+
 }
 
-#highscore {
-  display:block;
-  margin-top:5px;
-  font-size:18px;
-  color:#ffcc00;
-  text-shadow:0 0 5px #ffcc00;
+.scoreboard{
+
+font-size:20px;
+
+margin-bottom:10px;
+
 }
 
-/* Canvas légèrement réduit pour laisser place aux flèches */
-canvas {
-  display:block;
-  background:#111;
-  margin:10px auto 0 auto;
-  border:4px solid #00ff99;
-  box-shadow:0 0 30px #00ff99;
-  max-height: 60vh; /* canvas plus petit pour mobile */
-  width:90vw;
+#highscore{
+
+color:yellow;
+
+font-weight:bold;
+
 }
 
-/* Contrôles tactiles en croix sous le canvas */
-.mobile-controls {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin-top:10px;
+.controls{
+
+margin-top:20px;
+
 }
 
-.mobile-controls .up {
-  margin-bottom:5px;
+.controls button{
+
+width:70px;
+
+height:70px;
+
+font-size:28px;
+
 }
 
-.mobile-controls .middle-row {
-  display:flex;
-  justify-content:center;
-  gap:5px;
-}
+.row{
 
-.mobile-controls button {
-  width:60px;
-  height:60px;
-  font-size:24px;
-  border-radius:10px;
-  background:#00ff99;
-}
+display:flex;
 
-.mobile-controls button:hover {
-  background:#00cc77;
+justify-content:center;
+
+gap:20px;
+
 }

@@ -1,49 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Yassir Snake Game</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
+
+<title>Yassir Snake Game</title>
+
 <link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
+
 </head>
 
 <body>
 
 <h1>🐍 Yassir Snake Game</h1>
 
-<!-- Menu au-dessus du canvas -->
 <div class="menu">
-  <select id="level">
-    <option value="150">Easy</option>
-    <option value="100">Medium</option>
-    <option value="60">Hard</option>
-  </select>
-  <button onclick="startGame()">Start Game</button>
-  <button onclick="restartGame()">Restart</button>
+
+<select id="difficulty">
+<option value="150">Easy</option>
+<option value="100">Medium</option>
+<option value="70">Hard</option>
+</select>
+
+<button onclick="startGame()">Start Game</button>
+<button onclick="restartGame()">Restart</button>
+
 </div>
 
-<!-- Score et highscore -->
-<div class="score">
-  Score: <span id="score">0</span>
-  <span id="highscore">Highscore: 0</span>
+<div class="scoreboard">
+
+Score: <span id="score">0</span>
+
+Highscore: <span id="highscore">0</span>
+
 </div>
 
-<!-- Canvas -->
 <canvas id="game"></canvas>
 
-<!-- Flèches tactiles juste sous le canvas -->
-<div class="mobile-controls">
-  <button class="up" onclick="setDirection('up')">⬆️</button>
-  <div class="middle-row">
-    <button class="left" onclick="setDirection('left')">⬅️</button>
-    <button class="down" onclick="setDirection('down')">⬇️</button>
-    <button class="right" onclick="setDirection('right')">➡️</button>
-  </div>
+<div class="controls">
+
+<button onclick="changeDirection('up')">⬆️</button>
+
+<div class="row">
+
+<button onclick="changeDirection('left')">⬅️</button>
+
+<button onclick="changeDirection('down')">⬇️</button>
+
+<button onclick="changeDirection('right')">➡️</button>
+
+</div>
+
 </div>
 
 <script src="snake.js"></script>
+
 </body>
+
 </html>
