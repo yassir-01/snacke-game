@@ -33,8 +33,9 @@ display:block;
 margin:auto;
 
 width:90vw;
+height:50vh;
 
-height:55vh;
+max-width:600px;
 
 }
 
@@ -89,7 +90,6 @@ margin-top:20px;
 .controls button{
 
 width:70px;
-
 height:70px;
 
 font-size:28px;
@@ -99,9 +99,7 @@ font-size:28px;
 .row{
 
 display:flex;
-
 justify-content:center;
-
 gap:20px;
 
 }
